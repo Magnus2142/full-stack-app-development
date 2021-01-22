@@ -1,0 +1,92 @@
+body {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.menu ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.menu li {
+    margin: 1% 4%;
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 1% 2%;
+}
+
+.menu li:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.header {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.HTML-info{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 5% 10%;
+    border: 10px solid orange;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+.HTML-info p {
+    width: 40%;
+    padding: 5%;
+    font-size: 25px;
+}
+.HTML-info img {
+    width: 40%;
+    padding: 5%;
+}
+
+.CSS-info {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    padding: 5% 5%;
+    border: 10px solid navy;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+.CSS-info p{
+    width: 40%;
+    font-size: 25px;
+    padding: 5%;
+}
+
+.CSS-info img {
+    width: 40%;
+    font-size: 30px;
+    padding: 5%;
+}
+
+.footer {
+    text-align: center;
+    padding: 5% 0;
+    font-size: 25px;
+}
+
+#footer-list {
+    list-style: none;
+}
+
+#footer-list li {
+    margin: 1%;
+}
+
+#footer-list li:hover {
+    cursor: pointer;
+}
