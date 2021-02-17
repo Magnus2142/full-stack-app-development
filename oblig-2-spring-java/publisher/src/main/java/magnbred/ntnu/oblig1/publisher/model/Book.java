@@ -1,6 +1,7 @@
 package magnbred.ntnu.oblig1.publisher.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,11 +19,11 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String name, String dateOfPublication, List<Author> authors) {
+    public Book(int id, String name, String dateOfPublication) {
         this.id = id;
         this.name = name;
         this.dateOfPublication = dateOfPublication;
-        this.authors = authors;
+        this.authors = new ArrayList<>();
     }
 
     public int getId() {
