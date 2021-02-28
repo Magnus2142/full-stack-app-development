@@ -1,8 +1,6 @@
-package magnbred.ntnu.oblig1.publisher.model;
+package magnbred.ntnu.oblig2.publisher.model;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,11 +8,11 @@ import java.util.List;
  */
 public class Author {
 
+
     private int id;
     private String name;
     private String dateOfBirth;
     private Address address;
-    private List<Book> books;
 
     public int getId() {
         return id;
@@ -32,7 +30,6 @@ public class Author {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.books = new ArrayList<>();
     }
 
     public String getName() {
@@ -59,14 +56,6 @@ public class Author {
         this.address = address;
     }
 
-    public List<Book> getBooks() {
-        return this.books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
     public Author name(String name) {
         setName(name);
         return this;
@@ -79,11 +68,6 @@ public class Author {
 
     public Author address(Address address) {
         setAddress(address);
-        return this;
-    }
-
-    public Author books(List<Book> books) {
-        setBooks(books);
         return this;
     }
 

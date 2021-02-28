@@ -1,0 +1,5 @@
+INSERT INTO AUTHOR VALUES(1, 'Magnus Bredeli', '03.02.2000', 'Festningsgata 11');
+
+INSERT INTO BOOK VALUES(1, 'Boken om magnus', '03.02.2021');
+
+INSERT INTO AUTHOR_BOOK VALUES(1, 1);

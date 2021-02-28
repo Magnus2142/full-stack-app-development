@@ -1,4 +1,4 @@
-package magnbred.ntnu.oblig1.publisher;
+package magnbred.ntnu.oblig2.publisher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

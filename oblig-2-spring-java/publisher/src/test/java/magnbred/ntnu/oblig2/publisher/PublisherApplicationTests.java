@@ -1,4 +1,4 @@
-package magnbred.ntnu.oblig1.publisher;
+package magnbred.ntnu.oblig2.publisher;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

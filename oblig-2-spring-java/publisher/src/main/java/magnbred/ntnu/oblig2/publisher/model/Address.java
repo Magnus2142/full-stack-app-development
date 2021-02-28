@@ -1,4 +1,4 @@
-package magnbred.ntnu.oblig1.publisher.model;
+package magnbred.ntnu.oblig2.publisher.model;
 
 /**
  * Address

@@ -1,8 +1,8 @@
-package magnbred.ntnu.oblig1.publisher.service;
+package magnbred.ntnu.oblig2.publisher.service;
 
-import magnbred.ntnu.oblig1.publisher.model.Author;
-import magnbred.ntnu.oblig1.publisher.model.Book;
-import magnbred.ntnu.oblig1.publisher.repo.AuthorRepo;
+import magnbred.ntnu.oblig2.publisher.model.Author;
+import magnbred.ntnu.oblig2.publisher.model.Book;
+import magnbred.ntnu.oblig2.publisher.repo.AuthorRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +31,6 @@ public class AuthorService {
     public Author getAuthor(String name){
         logger.info("Getting author with name: " + name);
         return authorRepo.getAuthor(name);
-    }
-
-    public List<Book> getAuthorBooks(int id){
-        logger.info("Getting all books that is written by author with id: " + id);
-        return authorRepo.getAuthorBooks(id);
     }
 
     public void addAuthor(Author author){

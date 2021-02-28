@@ -1,7 +1,8 @@
-package magnbred.ntnu.oblig1.publisher.web;
+package magnbred.ntnu.oblig2.publisher.web;
 
-import magnbred.ntnu.oblig1.publisher.model.Book;
-import magnbred.ntnu.oblig1.publisher.service.BookService;
+import magnbred.ntnu.oblig2.publisher.model.Author;
+import magnbred.ntnu.oblig2.publisher.model.Book;
+import magnbred.ntnu.oblig2.publisher.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
