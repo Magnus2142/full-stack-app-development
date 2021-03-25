@@ -16,9 +16,9 @@ public class AuthorDao {
     JdbcTemplate jdbcTemplate;
 
 
-    public void createAuthor(Author author){
+    public int createAuthor(Author author){
         String query = "INSERT INTO AUTHOR VALUES(?, ?, ?, ?)";
-        jdbcTemplate.update(query, author.getId(), author.getName(), author.getDateOfBirth(), author.getAddress().getAddress());
+        return jdbcTemplate.update(query, author.getId(), author.getName(), author.getDateOfBirth(), author.getAddress().getAddress());
     }
 
     public List<Author> getAuthors(){
@@ -36,14 +36,14 @@ public class AuthorDao {
         return jdbcTemplate.queryForObject(query, new AuthorRowMapper(), name);
     }
 
-    public void updateAuthor(Author author, int id){
+    public int updateAuthor(Author author, int id){
         String query = "UPDATE AUTHOR SET AUTHOR_NAME = ?, DATE_OF_BIRTH = ?, ADDRESS = ? WHERE AUTHOR_ID = ?";
-        jdbcTemplate.update(query, author.getName(), author.getDateOfBirth(), author.getAddress().getAddress(), id);
+        return jdbcTemplate.update(query, author.getName(), author.getDateOfBirth(), author.getAddress().getAddress(), id);
     }
 
-    public void deleteAuthor(int id){
+    public int deleteAuthor(int id){
         String query = "DELETE FROM AUTHOR WHERE AUTHOR_ID = ?";
-        jdbcTemplate.update(query, id);
+        return jdbcTemplate.update(query, id);
     }
 
     public boolean authorIsValid(int id){

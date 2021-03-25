@@ -33,18 +33,18 @@ public class AuthorService {
         return authorRepo.getAuthor(name);
     }
 
-    public void addAuthor(Author author){
+    public int addAuthor(Author author){
         logger.info("Adding author: " + author.toString());
-        authorRepo.addAuthor(author);
+        return authorRepo.addAuthor(author);
     }
 
-    public void updateAuthor(Author author, int id){
+    public int updateAuthor(Author author, int id){
         logger.info("Updating author with id: " + id);
-        authorRepo.updateAuthpor(author, id);
+        return authorRepo.updateAuthpor(author, id);
     }
 
-    public void deleteAuthor(int id){
+    public int deleteAuthor(int id){
         logger.info("Deleting author with id: " + id);
-        authorRepo.deleteAuthor(id);
+        return authorRepo.deleteAuthor(id);
     }
 }

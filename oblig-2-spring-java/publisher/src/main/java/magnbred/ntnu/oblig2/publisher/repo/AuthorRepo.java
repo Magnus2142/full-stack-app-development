@@ -28,15 +28,15 @@ public class AuthorRepo {
         return authorDao.getAuthor(name);
     }
 
-    public void addAuthor(Author author){
-        authorDao.createAuthor(author);
+    public int addAuthor(Author author){
+        return authorDao.createAuthor(author);
     }
 
-    public void updateAuthpor(Author author, int id){
-        authorDao.updateAuthor(author, id);
+    public int updateAuthpor(Author author, int id){
+        return authorDao.updateAuthor(author, id);
     }
 
-    public void deleteAuthor(int id){
-        authorDao.deleteAuthor(id);
+    public int deleteAuthor(int id){
+        return authorDao.deleteAuthor(id);
     }
 }

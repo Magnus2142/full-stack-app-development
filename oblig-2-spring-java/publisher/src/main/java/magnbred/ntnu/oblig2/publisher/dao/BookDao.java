@@ -15,7 +15,9 @@ public class BookDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    //Er dette okay?????
+    @Autowired
+    AuthorBookDao authorBookDao;
+
     @Autowired
     AuthorDao authorDao;
 
@@ -55,8 +57,7 @@ public class BookDao {
         if(authors_exist){
             String addQuery = "INSERT INTO BOOK VALUES(?, ?, ?)";
             jdbcTemplate.update(addQuery, book.getId(), book.getName(), book.getDateOfPublication());
-            String relationQuery = "INSERT INTO AUTHOR_BOOK VALUES(?, ?)";
-            book.getAuthors().stream().forEach(author -> jdbcTemplate.update(relationQuery, author.getId(), book.getId()));
+            book.getAuthors().stream().forEach(author -> authorBookDao.addAuthorToBook(author.getId(), book.getId()));
         }else{
             System.out.println("Error, some of the authors does not exist");
         }
