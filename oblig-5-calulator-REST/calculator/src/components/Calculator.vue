@@ -84,16 +84,45 @@ export default {
       this.operation = '+';
       this.setPrevious();
     },
-    equal(){
+    async equal(){
       if(this.previous != null){
         let a = this.previous;
         let b = this.current;
-        this.current = `${this.operator(parseFloat(this.previous), parseFloat(this.current))}`;
-        document.getElementById('log').innerHTML += `${a} ${this.operation} ${b} = ${this.current}\n`;
-
+        document.getElementById('log').innerHTML += `${a} ${this.operation} ${b} = ${this.operator(parseInt(a, 10), parseInt(b, 10))}\n`;
+        
         this.previous = null;
+
+
+        let calculation = {
+          a: a,
+          b: b,
+          operation: this.operation,
+          answer: ""
+        }
+
+        let url= "http://localhost:8080/calculations";
+
+        let options = {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(calculation)
+        };
+
+        let result = await fetch(url, options)
+          .then(response => response.json())
+          .catch(error => console.log(error));
+        
+        console.log(result.answer);
+        let resultSplit = result.answer.split(".");
+        if(parseInt(resultSplit[1], 10) === 0){
+          this.current = resultSplit[0];
+        }else{
+          this.current = result.answer;
+        }
       }
-    }
+    },
   }
 
 }
